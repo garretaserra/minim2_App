@@ -1,14 +1,23 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Subjects
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-button>Add Subject</ion-button>
+  <ion-button>Add Student</ion-button>
+  <ion-select placeholder="Degree">
+    <ion-select-option>all</ion-select-option>
+    <ion-select-option>telecos</ion-select-option>
+    <ion-select-option>telematica</ion-select-option>
+    <ion-select-option>aerospacial</ion-select-option>
+  </ion-select>
+  <ion-list>
+    <ion-item (click)="gotoSubject(subject)" *ngFor="let subject of subjects">
+      {{subject.name}}
+    </ion-item>
+  </ion-list>
 </ion-content>
