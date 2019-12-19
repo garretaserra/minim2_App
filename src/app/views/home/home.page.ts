@@ -40,4 +40,11 @@ export class HomePage {
         await this.router.navigateByUrl('/subject/'+subject._id)
     }
 
+    async createSubject(){
+        await this.router.navigateByUrl('/create-subject');
+    }
+
+    async createStudent(){
+        await this.router.navigateByUrl('/create-student');
+    }
 }
