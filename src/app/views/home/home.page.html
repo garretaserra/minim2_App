@@ -9,11 +9,11 @@
 <ion-content>
   <ion-button>Add Subject</ion-button>
   <ion-button>Add Student</ion-button>
-  <ion-select placeholder="Degree">
+  <ion-select (ionChange)="changeDegree($event)" placeholder="Degree">
     <ion-select-option>all</ion-select-option>
     <ion-select-option>telecos</ion-select-option>
     <ion-select-option>telematica</ion-select-option>
-    <ion-select-option>aerospacial</ion-select-option>
+    <ion-select-option>aeroespacial</ion-select-option>
   </ion-select>
   <ion-list>
     <ion-item (click)="gotoSubject(subject)" *ngFor="let subject of subjects">
