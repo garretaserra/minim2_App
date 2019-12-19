@@ -1,5 +1,6 @@
 'use strict';
 export class Student {
+    _id: String;
     name: String;
     address: String;
     phones: [{

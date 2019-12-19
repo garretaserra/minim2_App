@@ -26,4 +26,8 @@ export class StudentPage implements OnInit {
         this.student = await this.studentService.getStudent(id).toPromise();
     }
 
+    async deleteStudent(){
+        await this.studentService.deleteStudent(this.student._id).toPromise();
+    }
+
 }

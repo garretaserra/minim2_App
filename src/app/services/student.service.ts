@@ -26,4 +26,8 @@ export class StudentService {
     addNewStudent(student: Student){
         return this.http.post(this.url + '/student/add', {student});
     }
+
+    deleteStudent(id){
+        return this.http.get<any>(this.url + '/student/delete/' + id);
+    }
 }

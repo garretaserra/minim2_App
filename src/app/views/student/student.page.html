@@ -4,7 +4,7 @@
     <ion-title *ngIf="!student">student</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-button (click)="deleteStudent()">Delete Student</ion-button>
 <ion-content *ngIf="student">
   <ion-item>Address: {{student.address}}</ion-item>
   <ion-item *ngIf="student.phones.length === 0">No phones</ion-item>
