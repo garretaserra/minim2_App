@@ -9,17 +9,21 @@ import {Student} from '../models/Student';
 })
 export class StudentService {
 
-    url: Url;
+    url: string;
 
     constructor(private http: HttpClient) {
-        this.url = new Url();
+        this.url = new Url().url;
     }
 
     getStudents(): Observable<Student[]>{
-        return this.http.get<Student[]>(this.url.url + '/student/get');
+        return this.http.get<Student[]>(this.url + '/student/get');
+    }
+
+    getStudent(id): Observable<Student>{
+        return this.http.get<Student>(this.url + '/student/get/' + id);
     }
 
     addNewStudent(student: Student){
-        return this.http.post(this.url.url + '/student/add', {student});
+        return this.http.post(this.url + '/student/add', {student});
     }
 }

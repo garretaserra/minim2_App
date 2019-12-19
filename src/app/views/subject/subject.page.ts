@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SubjectService} from '../../services/subject.service';
 import {Subject} from '../../models/Subject';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-subject',
@@ -14,6 +14,7 @@ export class SubjectPage implements OnInit {
 
     constructor(
         private subjectService: SubjectService,
+        private router: Router,
         private route: ActivatedRoute
     ) { }
 
@@ -26,6 +27,6 @@ export class SubjectPage implements OnInit {
     }
 
     async gotoStudent(student){
-
+        await this.router.navigateByUrl('/student/'+student._id);
     }
 }

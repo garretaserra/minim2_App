@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Student} from '../../models/Student';
+import {StudentService} from '../../services/student.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentPage implements OnInit {
 
-  constructor() { }
+    student: Student;
 
-  ngOnInit() {
-  }
+    constructor(
+        private studentService: StudentService,
+        private router: Router,
+        private route: ActivatedRoute
+    ) { }
+
+    ngOnInit() {
+    }
+
+    async ionViewWillEnter(){
+        let id = this.route.snapshot.paramMap.get('id');
+        this.student = await this.studentService.getStudent(id).toPromise();
+    }
 
 }

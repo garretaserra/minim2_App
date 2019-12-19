@@ -5,10 +5,11 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-button>Add Student to Subject</ion-button>
 <ion-content>
   <ion-list *ngIf="subject">
     <ion-item *ngIf="subject.students.length === 0"> No students </ion-item>
-    <ion-item (click)="gotoStudent(subject)" *ngFor="let student of subject.students">
+    <ion-item (click)="gotoStudent(student)" *ngFor="let student of subject.students">
       {{student.name}}
     </ion-item>
   </ion-list>
