@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SubjectService} from '../../services/subject.service';
+import {Subject} from '../../models/Subject';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-subject',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectPage implements OnInit {
 
-  constructor() { }
+    subject: Subject;
 
-  ngOnInit() {
-  }
+    constructor(
+        private subjectService: SubjectService,
+        private route: ActivatedRoute
+    ) { }
 
+    ngOnInit() {
+    }
+
+    async ionViewWillEnter(){
+      let id = this.route.snapshot.paramMap.get('id');
+      this.subject = await this.subjectService.getSubjectFromId(id).toPromise();
+    }
+
+    async gotoStudent(student){
+
+    }
 }

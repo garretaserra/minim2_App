@@ -20,6 +20,10 @@ export class SubjectService {
         return this.http.get<Subject[]>(this.url + '/subject/get');
     }
 
+    getSubjectFromId(id): Observable<Subject>{
+        return this.http.get<Subject>(this.url + '/subject/getFromId/' + id);
+    }
+
     enrollStudent(subjectName, studentName) {
         return this.http.post(this.url + '/subject/addNew',{subject:{name: subjectName},student:{name: studentName}});
     }
