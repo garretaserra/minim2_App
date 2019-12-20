@@ -5,5 +5,15 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-input [(ngModel)]="student.name" placeholder="Name"></ion-input>
+  <ion-input [(ngModel)]="student.address" placeholder="Adress"></ion-input>
+  <ion-list *ngFor="let phone of student.phones">
+    <ion-item>
+      <ion-input style="width: 45%" [(ngModel)]="phone.description" placeholder="Description"></ion-input>
+      <ion-input style="width: 45%" [(ngModel)]="phone.number" placeholder="Number"></ion-input>
+      <ion-icon (click)="deleteSubject(phone)" style="color: red; margin-left:auto" name="close"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="addPhone()">New Phone</ion-button>
+  <ion-button (click)="addStudent()">Add</ion-button>
 </ion-content>
