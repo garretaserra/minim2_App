@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>students</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item (click)="goToStudent(student)" *ngFor="let student of students">{{student.name}}</ion-item>
+  </ion-list>
+</ion-content>

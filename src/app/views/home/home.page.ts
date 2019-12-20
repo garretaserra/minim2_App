@@ -52,4 +52,8 @@ export class HomePage {
         await this.subjectService.deleteSubject(subject.name).toPromise();
         this.updateSubjects();
     }
+
+    async viewStudents() {
+        await this.router.navigateByUrl('/students');
+    }
 }
