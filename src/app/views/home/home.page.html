@@ -10,12 +10,6 @@
   <ion-button (click)="createSubject()">Add Subject</ion-button>
   <ion-button (click)="createStudent()" >Add Student</ion-button>
   <ion-button (click)="viewStudents()" >View Students</ion-button>
-  <ion-select (ionChange)="changeDegree($event)" placeholder="Degree">
-    <ion-select-option>all</ion-select-option>
-    <ion-select-option>telecos</ion-select-option>
-    <ion-select-option>telematica</ion-select-option>
-    <ion-select-option>aeroespacial</ion-select-option>
-  </ion-select>
   <ion-list>
     <ion-item *ngFor="let subject of subjects">
       <div style="width: 90%;height: 100%;text-align: center" (click)="gotoSubject(subject)">{{subject.name}}</div>

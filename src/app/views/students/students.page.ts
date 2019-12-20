@@ -23,13 +23,14 @@ export class StudentsPage implements OnInit {
 
     async ionViewWillEnter(){
         this.allStudents = await this.studentService.getStudents().toPromise();
+        await this.changeDegree({detail:{value: 'all'}});
     }
 
     async goToStudent(student: Student) {
         await this.router.navigateByUrl('/student/'+student._id);
     }
 
-    changeDegree(event: CustomEvent) {
+    changeDegree(event) {
         let degree = event.detail.value;
         if(degree==='all'){
             this.shownStudents = this.allStudents;

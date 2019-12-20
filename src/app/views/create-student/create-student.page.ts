@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {StudentService} from '../../services/student.service';
 import {Student} from '../../models/Student';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-student',
@@ -12,6 +13,7 @@ export class CreateStudentPage implements OnInit {
     student: Student = new Student();
 
     constructor(
+        private router: Router,
         private studentService: StudentService
     ) {}
 
@@ -22,6 +24,7 @@ export class CreateStudentPage implements OnInit {
 
     async addStudent() {
         await this.studentService.addNewStudent(this.student).toPromise();
+        await this.router.navigateByUrl('/home');
     }
 
     async addPhone(){
