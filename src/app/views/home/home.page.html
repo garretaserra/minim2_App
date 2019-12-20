@@ -16,8 +16,9 @@
     <ion-select-option>aeroespacial</ion-select-option>
   </ion-select>
   <ion-list>
-    <ion-item (click)="gotoSubject(subject)" *ngFor="let subject of subjects">
-      {{subject.name}}
+    <ion-item *ngFor="let subject of subjects">
+      <div style="width: 90%;height: 100%;text-align: center" (click)="gotoSubject(subject)">{{subject.name}}</div>
+      <ion-icon (click)="deleteSubject(subject)" style="color: red; margin-left:auto" name="close"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>

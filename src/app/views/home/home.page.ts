@@ -47,4 +47,9 @@ export class HomePage {
     async createStudent(){
         await this.router.navigateByUrl('/create-student');
     }
+
+    async deleteSubject(subject) {
+        await this.subjectService.deleteSubject(subject.name).toPromise();
+        this.updateSubjects();
+    }
 }
