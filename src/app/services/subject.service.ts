@@ -45,6 +45,6 @@ export class SubjectService {
     }
 
     getSubjectsByDegree(degreeName): Observable<Subject[]> {
-        return this.http.get<Subject[]>(this.url + '/subject/getByDegree?degree=' + degreeName);
+        return this.http.get<Subject[]>(this.url + '/subject/getByDegree?degrees=' + degreeName);
     }
 }

@@ -17,6 +17,7 @@ export class CreateStudentPage implements OnInit {
 
     ngOnInit() {
         this.student.phones = [{description: '', number: ''}];
+        this.student.degrees = [];
     }
 
     async addStudent() {
@@ -34,5 +35,12 @@ export class CreateStudentPage implements OnInit {
                 return;
             }
         }
+    }
+
+    addDegree(event) {
+        console.log(event);
+        event.detail.value.forEach(val=>{
+            this.student.degrees.push(val);
+        });
     }
 }

@@ -7,6 +7,11 @@
 <ion-content>
   <ion-input [(ngModel)]="student.name" placeholder="Name"></ion-input>
   <ion-input [(ngModel)]="student.address" placeholder="Adress"></ion-input>
+  <ion-select (ionChange)="addDegree($event)" multiple="true" placeholder="Add new Degrees">
+    <ion-select-option>telecos</ion-select-option>
+    <ion-select-option>telematica</ion-select-option>
+    <ion-select-option>aeroespacial</ion-select-option>
+  </ion-select>
   <ion-list *ngFor="let phone of student.phones">
     <ion-item>
       <ion-input style="width: 45%" [(ngModel)]="phone.description" placeholder="Description"></ion-input>
@@ -15,5 +20,5 @@
     </ion-item>
   </ion-list>
   <ion-button (click)="addPhone()">New Phone</ion-button>
-  <ion-button (click)="addStudent()">Add</ion-button>
+  <ion-button (click)="addStudent()">Add Student</ion-button>
 </ion-content>

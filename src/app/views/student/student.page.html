@@ -7,6 +7,11 @@
 <ion-button (click)="deleteStudent()">Delete Student</ion-button>
 <ion-content *ngIf="student">
   <ion-item>Address: {{student.address}}</ion-item>
+  <ion-item *ngIf="student.degrees.length === 0">No Degrees</ion-item>
+  <ion-item *ngIf="student.degrees.length !== 0">Degrees</ion-item>
+  <ion-list *ngFor="let degree of student.degrees">
+    <ion-item>{{degree}}</ion-item>
+  </ion-list>
   <ion-item *ngIf="student.phones.length === 0">No phones</ion-item>
   <ion-item *ngIf="student.phones.length !== 0">Phones</ion-item>
   <ion-list *ngFor="let phone of student.phones">
