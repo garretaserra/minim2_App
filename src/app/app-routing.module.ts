@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'students',
-    loadChildren: () => import('./students/students.module').then( m => m.StudentsPageModule)
+    loadChildren: () => import('./views/students/students.module').then(m => m.StudentsPageModule)
   },
 ];
 
