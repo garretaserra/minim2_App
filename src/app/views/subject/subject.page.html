@@ -5,12 +5,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-button>Add Student to Subject</ion-button>
 <ion-content>
   <ion-list *ngIf="subject">
     <ion-item *ngIf="subject.students.length === 0"> No students </ion-item>
-    <ion-item (click)="gotoStudent(student)" *ngFor="let student of subject.students">
-      {{student.name}}
+    <ion-item *ngFor="let student of subject.students">
+      <div (click)="gotoStudent(student)" style="width: 90%;height: 100%;text-align: center" >{{student.name}}</div>
+      <ion-icon (click)="dropSubject(student)" style="color: red; margin-left:auto" name="close"></ion-icon>
     </ion-item>
   </ion-list>
+
+  <ion-select (ionChange)="enrollStudents($event)" multiple="true" placeholder="Add new Students">
+    <ion-select-option *ngFor="let student of nonEnrolledStudents">{{student.name}}</ion-select-option>
+  </ion-select>
 </ion-content>
